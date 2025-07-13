@@ -1,9 +1,7 @@
-# app.py
-
-# Linha de importação: o Python vai procurar por 'estruturas_dados.py'
+# Linha de importação
 from estruturas import Node, UnorderedList, MinHeap, Tarefa
 
-# Inicializar as estruturas de dados globais
+# Inicializador das estruturas
 tarefas_pendentes = MinHeap()
 historico_tarefas_concluidas = UnorderedList()
 
@@ -52,9 +50,16 @@ def concluir_proxima_tarefa():
         tarefa_concluida = tarefas_pendentes.delete_min()
         historico_tarefas_concluidas.add(tarefa_concluida)
         print(f"A tarefa {tarefa_concluida} foi concluída!")
+
 def ver_historico_tarefas():
-    # Lógica para ver o histórico
-    pass
+    print("\n--- Histórico de Tarefas Concluídas ---")
+    if historico_tarefas_concluidas.isEmpty():
+        print("Nenhuma tarefa foi concluída ainda")
+    else:
+        atual = historico_tarefas_concluidas.head
+        while atual is not None:
+            print(atual.getData())
+            atual = atual.getNext()
 
 def main():
     while True:
