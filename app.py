@@ -45,9 +45,13 @@ def ver_proxima_tarefa():
         print(proxima_tarefa)
         
 def concluir_proxima_tarefa():
-    # Lógica para concluir a próxima tarefa
-    pass
-
+    print("\n--- Concluir Próxima Tarefa ---")
+    if tarefas_pendentes.current_size == 0:
+        print("Não há tarefas pendentes!")
+    else:
+        tarefa_concluida = tarefas_pendentes.delete_min()
+        historico_tarefas_concluidas.add(tarefa_concluida)
+        print(f"A tarefa {tarefa_concluida} foi concluída!")
 def ver_historico_tarefas():
     # Lógica para ver o histórico
     pass
