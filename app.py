@@ -16,7 +16,7 @@ def exibir_menu():
 
 #Método para adicionar uma nova tarefa que será organizada no min heap
 def adicionar_tarefa():
-    print("--- Adicionar Nova Tarefa ---")
+    print("\n--- Adicionar Nova Tarefa ---")
     descricao = input("Digite a descrição da tarefa: ")
     while True:
         try:
@@ -34,6 +34,7 @@ def adicionar_tarefa():
     tarefas_pendentes.insert(nova_tarefa)
     print("Tarefa adicionada com sucesso!")
 
+#Método para ver próxima tarefa por ordem de prioridade.
 def ver_proxima_tarefa():
     print("\n--- Próxima Tarefa Prioritária ---")
     if tarefas_pendentes.current_size == 0:
@@ -41,7 +42,8 @@ def ver_proxima_tarefa():
     else:
         proxima_tarefa = tarefas_pendentes.heap_list[1]
         print(proxima_tarefa)
-        
+
+#Método para concluir próxima tarefa por ordem de prioridade.
 def concluir_proxima_tarefa():
     print("\n--- Concluir Próxima Tarefa ---")
     if tarefas_pendentes.current_size == 0:
@@ -51,6 +53,7 @@ def concluir_proxima_tarefa():
         historico_tarefas_concluidas.add(tarefa_concluida)
         print(f"A tarefa {tarefa_concluida} foi concluída!")
 
+#Método para ver histórico de tarefas concluídas
 def ver_historico_tarefas():
     print("\n--- Histórico de Tarefas Concluídas ---")
     if historico_tarefas_concluidas.isEmpty():
