@@ -1,10 +1,11 @@
-# Linha de importação
+# Linha de importação.
 from estruturas import Node, UnorderedList, MinHeap, Tarefa
 
-# Inicializador das estruturas
+# Inicializador das estruturas.
 tarefas_pendentes = MinHeap()
 historico_tarefas_concluidas = UnorderedList()
 
+# Função para dashboard de escolhas.
 def exibir_menu():
     print("\n--- Gerenciador de Tarefas ---")
     print("1. Adicionar nova tarefa")
